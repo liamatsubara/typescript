@@ -6,9 +6,12 @@ Mostre na tela todos os elementos da Collection Set.
 import readlinesync = require('readline-sync');
 
 const numeros: Set<number> = new Set<number>();
+let numOrdenado;
 
 for(let i = 0; i < 10; i++){
     numeros.add(readlinesync.questionInt(`Digite o numero ${i+1}: `));
 }
 
-console.table(numeros);
+numOrdenado = Array.from(numeros).sort((a, b) => a - b);
+
+console.table(numOrdenado);
